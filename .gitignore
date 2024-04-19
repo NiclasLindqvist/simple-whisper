@@ -1,3 +1,6 @@
 /audios/*
+!/audios/.gitkeep
 /models/*
+!/models/.gitkeep
 /outputs/*
+!/outputs/.gitkeep
