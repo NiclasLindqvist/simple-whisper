@@ -1,7 +1,16 @@
 FROM ghcr.io/ggerganov/whisper.cpp:main
 
-COPY transcribe_mp3.sh .
+RUN apt-get update && apt-get install -y \
+    python3.11 \
+    ffmpeg \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN ln -s /usr/bin/python3.11 /usr/bin/python3
+RUN ln -s /usr/bin/python3.11 /usr/bin/python
+
+COPY transcribe_mp3.sh transcribe_mp3.py ./
 RUN chmod +x transcribe_mp3.sh
 
-ENTRYPOINT ["./transcribe_mp3.sh"]
-CMD ["/tmp/input.mp3"]
+
+ENTRYPOINT ["python", "-m", "transcribe_mp3"]
+CMD ["--help"]
