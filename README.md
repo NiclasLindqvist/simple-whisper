@@ -13,4 +13,6 @@ Put the model in the `models` folder
 
 ## Run
 - Put your audio files in the `audios` folder
-- Run the application `./transcribe.sh <file_name>`
+- Run the application `./process.sh audios/your_audio_file.mp3`
+- The output will be in the `output` folder
+

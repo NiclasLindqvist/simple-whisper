@@ -11,3 +11,5 @@ __pycache__/
 !/models/.gitkeep
 /outputs/*
 !/outputs/.gitkeep
+/db/*
+!/db/.gitkeep
